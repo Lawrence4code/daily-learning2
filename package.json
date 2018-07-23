@@ -1,0 +1,18 @@
+{
+  "name": "gulp-setup-v1",
+  "version": "1.0.0",
+  "main": "gulpfile.babel.js",
+  "author": "Lawrence4code",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.24.6",
+    "gulp": "3.9.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.1"
+  }
+}

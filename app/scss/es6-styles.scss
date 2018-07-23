@@ -1,0 +1,106 @@
+/* ------------------------- Mixins --------------------- */
+
+@mixin respond($breakpoint) {
+  // @if $breakpoint==phone-land {
+  //   @media screen and (min-width: 37.5em), (min-height: 23.81em) {
+  //     @content;
+  //   } // 600px/16px   = 37.5em
+  // }
+  @if $breakpoint==tab-port {
+    @media only screen and (min-width: 37.5em) {
+      @content;
+    } // 600px/16px   = 37.5em
+  }
+  @if $breakpoint==tab-land {
+    @media screen and (min-width: 56.25em) {
+      @content;
+    } // 900px/16px   = 56.25em
+  }
+  @if $breakpoint==desktop {
+    @media screen and (min-width: 75em) {
+      @content;
+    } // 1200/16px    = 75em
+  }
+  @if $breakpoint==wide-screen {
+    @media screen and (min-width: 112.5em) {
+      @content;
+    } // 1800px/16px  = 112.5em
+  }
+}
+
+/* ---------------------- Variables --------------------- */
+
+:root {
+  --color-background: #1e2029; // --color-background: #2e3141;
+  --color-background-light: #353849;
+  --color-primary: #9b999a;
+  --color-primary-dark: #3f4e85;
+  --color-white: #fff;
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.1);
+  --line: 2px solid rgba(255, 255, 255, 0.125);
+  --line1: 3px solid rgba(255, 255, 255, 0.125);
+}
+
+/* ---------------- GENERAL SETTINGS  ------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  @include respond(tab-port) {
+    font-size: 68.75%; // 1rem = 11px  // 11px/16px  = 68.75%
+  }
+  @include respond(tab-land) {
+    font-size: 75%; // 1rem = 12px  // 12px/16px  = 75%
+  }
+  @include respond(desktop) {
+    font-size: 81.25%; // 1rem = 13px  // 13px/16px  = 81.25%
+  }
+  @include respond(wide-screen) {
+    font-size: 87.75%; // 1rem = 14px  // 14px/16px  = 87.75%
+  }
+  font-size: 62.5%; // 1rem = 10px // 10px/16px = 62.5%
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-background);
+  line-height: 1.6rem;
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+/* -------------------------- Container -------------------------- */
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient( to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.3)), url(/images/bg1.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* -------------------------- Hero ---------------------------- */

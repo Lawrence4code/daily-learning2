@@ -1,0 +1,310 @@
+/* ------------------------- Mixins --------------------- */
+/* ---------------------- Variables --------------------- */
+:root {
+  --color-background: #1e2029;
+  --color-background-light: #353849;
+  --color-primary: #4c5c96;
+  --color-primary-dark: #3f4e85;
+  --color-white: #fff;
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.1);
+  --line: 2px solid rgba(255, 255, 255, 0.125);
+  --line1: 3px solid rgba(255, 255, 255, 0.125); }
+
+/* ---------------- GENERAL SETTINGS  ------------------- */
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%; }
+  @media only screen and (min-width: 37.5em) {
+    html {
+      font-size: 68.75%; } }
+  @media screen and (min-width: 56.25em) {
+    html {
+      font-size: 75%; } }
+  @media screen and (min-width: 75em) {
+    html {
+      font-size: 81.25%; } }
+  @media screen and (min-width: 112.5em) {
+    html {
+      font-size: 87.75%; } }
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+body {
+  background-color: var(--color-background);
+  line-height: 1.6rem;
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+  height: 100vh;
+  position: relative; }
+
+/* -------------------------- Container -------------------------- */
+.container {
+  width: 100%;
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(15, 32, 39, 0.486)), to(rgba(32, 58, 67, 0.315))), url(/images/bg.jpg);
+  background-image: linear-gradient(to right, rgba(15, 32, 39, 0.486), rgba(32, 58, 67, 0.315)), url(/images/bg.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  -webkit-animation-name: easeInBG;
+          animation-name: easeInBG;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  overflow: hidden; }
+
+/* -------------------------- Hero ---------------------------- */
+.hero {
+  width: 90%;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center; }
+  .hero__title {
+    position: relative;
+    width: 90%;
+    margin: 1rem auto;
+    padding: 3rem 0;
+    font-size: 3.25rem;
+    text-transform: uppercase;
+    color: #9b999a;
+    font-weight: 800;
+    letter-spacing: .2rem;
+    word-spacing: 1rem;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden; }
+    .hero__title:before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 90%;
+      height: 40%;
+      top: 45%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      padding-bottom: 2rem;
+      border-left: 3px solid #3c4d64;
+      border-right: 3px solid #3c4d64;
+      opacity: 0;
+      -webkit-animation: animateTitle1 .7s linear forwards .5s;
+              animation: animateTitle1 .7s linear forwards .5s; }
+    .hero__title:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 60%;
+      top: 45%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      padding-bottom: 7.5rem;
+      border-left: 5px solid #3c4d64;
+      border-right: 5px solid #3c4d64;
+      border-bottom: 2px solid transparent;
+      opacity: 0;
+      -webkit-animation: animateTitle2 .7s linear forwards .5s, animateTitle3 .5s linear forwards 1.2s;
+              animation: animateTitle2 .7s linear forwards .5s, animateTitle3 .5s linear forwards 1.2s; }
+  .hero__list {
+    padding: 2rem;
+    width: 90%;
+    height: 70%;
+    margin: 2rem auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .hero__list__items {
+      list-style: none; }
+      .hero__list__items a {
+        display: inline-block; }
+        .hero__list__items a:link, .hero__list__items a:visited {
+          position: relative;
+          -webkit-backface-visibility: hidden;
+                  backface-visibility: hidden;
+          margin: .55rem;
+          padding: .5rem 0 .4rem 0;
+          font-size: 2rem;
+          color: #bbb;
+          text-transform: uppercase;
+          cursor: pointer;
+          text-decoration: none;
+          -webkit-transition: all .5s;
+          transition: all .5s;
+          -webkit-transform: scale(1);
+                  transform: scale(1);
+          overflow: hidden; }
+        .hero__list__items a:hover, .hero__list__items a:active {
+          -webkit-transform: scale(1.03);
+                  transform: scale(1.03);
+          color: #fff; }
+        .hero__list__items a:before {
+          content: "";
+          position: absolute;
+          top: 53%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+                  transform: translate(-50%, -50%);
+          width: 100%;
+          height: 100%;
+          border-bottom: 1px solid #fff;
+          opacity: 0;
+          -webkit-backface-visibility: hidden;
+                  backface-visibility: hidden; }
+        .hero__list__items a:hover:before {
+          -webkit-animation: animationItem .5s forwards;
+                  animation: animationItem .5s forwards; }
+
+.footer {
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%; }
+  .footer__list {
+    width: 80%;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin: 0 auto; }
+  .footer__items {
+    text-transform: uppercase; }
+    .footer__items a:link,
+    .footer__items a:visited {
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 1px; }
+
+/* ----------------------- Animation ------------------------- */
+@-webkit-keyframes easeInBG {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes easeInBG {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes animateTitle1 {
+  0% {
+    width: 110%;
+    opacity: 1; }
+  100% {
+    width: 120%;
+    height: 60%;
+    opacity: 0; } }
+
+@keyframes animateTitle1 {
+  0% {
+    width: 110%;
+    opacity: 1; }
+  100% {
+    width: 120%;
+    height: 60%;
+    opacity: 0; } }
+
+@-webkit-keyframes animateTitle2 {
+  0% {
+    width: 100%;
+    opacity: 1; }
+  100% {
+    width: 110%;
+    height: 80%;
+    opacity: 0; } }
+
+@keyframes animateTitle2 {
+  0% {
+    width: 100%;
+    opacity: 1; }
+  100% {
+    width: 110%;
+    height: 80%;
+    opacity: 0; } }
+
+@-webkit-keyframes animateTitle3 {
+  0% {
+    width: 30%;
+    opacity: 0;
+    border-right: none;
+    border-left: none; }
+  100% {
+    border-bottom: 2px solid #817f7f;
+    border-right: none;
+    border-left: none;
+    width: 40%;
+    opacity: 1; } }
+
+@keyframes animateTitle3 {
+  0% {
+    width: 30%;
+    opacity: 0;
+    border-right: none;
+    border-left: none; }
+  100% {
+    border-bottom: 2px solid #817f7f;
+    border-right: none;
+    border-left: none;
+    width: 40%;
+    opacity: 1; } }
+
+@-webkit-keyframes animationItem {
+  0% {
+    width: 70%;
+    opacity: 0;
+    letter-spacing: 1px; }
+  100% {
+    width: 100%;
+    opacity: 1; } }
+
+@keyframes animationItem {
+  0% {
+    width: 70%;
+    opacity: 0;
+    letter-spacing: 1px; }
+  100% {
+    width: 100%;
+    opacity: 1; } }
