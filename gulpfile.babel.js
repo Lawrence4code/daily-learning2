@@ -18,7 +18,7 @@ function errorLog(error) {
 // -------------- SCRIPT TASK -------------- //
 
 gulp.task('script', function () {
-  gulp.src('app/js/script-main.js')
+  gulp.src('app/js/scriptMain.js')
     .pipe(rename("script.js"))
     .pipe(gulp.dest('app/js/'))
     .pipe(reload({
@@ -30,7 +30,7 @@ gulp.task('script', function () {
 //  ES6 SCRIPT TASK //
 
 gulp.task('es6-script', function () {
-  gulp.src('app/js/es6-main.js')
+  gulp.src('app/js/es6-scriptMain.js')
     .pipe(rename("es6-script.js"))
     .pipe(gulp.dest('app/js/'))
     .pipe(reload({
